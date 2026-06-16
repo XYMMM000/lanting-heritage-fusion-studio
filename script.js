@@ -1,12 +1,13 @@
-const navToggle = document.querySelector('.nav-toggle');
+﻿const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.site-nav');
+const navLinks = document.querySelectorAll('.site-nav a');
 
 navToggle?.addEventListener('click', () => {
   const isOpen = nav.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-nav?.querySelectorAll('a').forEach(link => {
+navLinks.forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     navToggle?.setAttribute('aria-expanded', 'false');
@@ -15,16 +16,16 @@ nav?.querySelectorAll('a').forEach(link => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const observer = new IntersectionObserver(entries => {
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.16 });
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 const countObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -47,3 +48,17 @@ const countObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.id;
+    if (!id) return;
+    const link = document.querySelector(`.site-nav a[href='#${id}']`);
+    if (entry.isIntersecting) {
+      navLinks.forEach(item => item.classList.remove('active'));
+      link?.classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+
+document.querySelectorAll('main > section').forEach(section => sectionObserver.observe(section));
