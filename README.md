@@ -6,6 +6,13 @@
 
 网站展示工作室品牌、项目背景、XR 概念、技术栈、用户测试、团队成员、图集、商业应用与未来规划。
 
+当前版本已接入：
+
+- 4 分 20 秒融合 XR 项目实录（压缩为适合网页播放的 H.264 版本）
+- 12 组项目原始 FBX 榫卯结构
+- 基于 Three.js 的实时三维旋转、缩放与模型切换
+- 面向桌面端与移动端的沉浸式响应布局
+
 ## 文件结构
 
 ```text
@@ -13,6 +20,11 @@ lanting-heritage-fusion-studio/
 ├── index.html
 ├── style.css
 ├── script.js
+├── model-gallery.js
+├── assets/
+│   ├── models/
+│   ├── video/
+│   └── vendor/
 └── README.md
 ```
 
@@ -27,7 +39,7 @@ python -m http.server 8000
 
 3. 在浏览器中访问 `http://localhost:8000`。
 
-> 如果你没有 Python，也可以直接双击 `index.html` 在浏览器中打开，但建议使用本地服务器以获得更稳定的页面行为。
+> 三维模型使用 ES Modules 和 FBXLoader，必须通过本地服务器或线上地址访问，不建议直接双击 `index.html`。
 
 ## 编辑内容
 

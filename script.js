@@ -92,11 +92,23 @@ document.getElementById('generate-button')?.addEventListener('click', event => {
 });
 
 const storyDialog = document.getElementById('story-dialog');
-document.getElementById('play-story')?.addEventListener('click', () => storyDialog.showModal());
-storyDialog?.querySelector('.dialog-close').addEventListener('click', () => storyDialog.close());
-storyDialog?.addEventListener('click', event => {
-  if (event.target === storyDialog) storyDialog.close();
+const projectVideo = document.getElementById('project-video');
+
+document.getElementById('play-story')?.addEventListener('click', () => {
+  storyDialog.showModal();
+  projectVideo?.play().catch(() => {});
 });
+
+function closeStory() {
+  projectVideo?.pause();
+  storyDialog.close();
+}
+
+storyDialog?.querySelector('.dialog-close').addEventListener('click', closeStory);
+storyDialog?.addEventListener('click', event => {
+  if (event.target === storyDialog) closeStory();
+});
+storyDialog?.addEventListener('close', () => projectVideo?.pause());
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const architecture = document.querySelector('.hero-architecture');

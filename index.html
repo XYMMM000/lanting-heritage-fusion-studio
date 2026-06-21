@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +7,14 @@
   <meta name="theme-color" content="#0a0b09" />
   <title>融合 XR｜让遗产再次发生</title>
   <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./assets/vendor/three/three.module.min.js",
+        "three/addons/": "./assets/vendor/three/addons/"
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -21,6 +29,7 @@
     </button>
     <nav class="site-nav" aria-label="主导航">
       <a href="#journey">体验路径</a>
+      <a href="#structures">榫卯结构</a>
       <a href="#lab">共创实验</a>
       <a href="#evidence">项目成果</a>
       <a href="#applications">应用场景</a>
@@ -53,7 +62,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="#journey">进入融和馆 <span>↘</span></a>
           <button class="button button-quiet" id="play-story" type="button">
-            <span class="play-icon">▶</span> 观看 60 秒项目故事
+            <span class="play-icon">▶</span> 观看项目实录
           </button>
         </div>
       </div>
@@ -137,10 +146,68 @@
       </div>
     </section>
 
+    <section class="structures section" id="structures">
+      <div class="structure-heading reveal">
+        <div>
+          <p class="section-index">02 / DIGITAL STRUCTURE ARCHIVE</p>
+          <h2>拆开一座建筑的<br /><em>连接智慧</em></h2>
+        </div>
+        <p>
+          从十组基础节点到屋顶支撑柱与完整榫卯合集，所有结构均来自项目原始 FBX 资产。
+          拖动旋转、滚轮缩放，近距离观察不依赖钉与胶的东方构造逻辑。
+        </p>
+      </div>
+
+      <div class="model-showcase reveal">
+        <div class="model-viewport" id="model-viewport">
+          <canvas id="model-canvas" aria-label="可旋转的榫卯三维模型"></canvas>
+          <div class="model-loading" id="model-loading">
+            <span class="loading-ring"></span>
+            <strong>正在构建数字结构</strong>
+            <small id="model-progress">等待加载</small>
+          </div>
+          <div class="viewport-topline">
+            <span>LIVE 3D / WEBGL</span>
+            <span id="model-counter">01 / 12</span>
+          </div>
+          <div class="viewport-help">
+            <span>拖动旋转</span><i></i><span>滚轮缩放</span><i></i><span>双击复位</span>
+          </div>
+        </div>
+
+        <aside class="model-browser">
+          <div class="model-meta">
+            <p class="eyebrow">CURRENT STRUCTURE</p>
+            <h3 id="model-title">榫卯节点 01</h3>
+            <p id="model-description">基础木构连接节点。观察榫头与卯眼如何通过精确咬合完成受力传递。</p>
+            <dl>
+              <div><dt>格式</dt><dd>FBX 7.7</dd></div>
+              <div><dt>来源</dt><dd>融合 XR 原始资产</dd></div>
+              <div><dt>模式</dt><dd>实时交互</dd></div>
+            </dl>
+          </div>
+          <div class="model-list" role="group" aria-label="选择榫卯结构">
+            <button class="model-option active" data-model="show1.fbx" data-title="榫卯节点 01" data-description="基础木构连接节点。观察榫头与卯眼如何通过精确咬合完成受力传递。"><span>01</span><strong>基础节点一</strong><i>↗</i></button>
+            <button class="model-option" data-model="show2.fbx" data-title="榫卯节点 02" data-description="第二组基础构件，展示不同方向木构件的穿插与锁定关系。"><span>02</span><strong>基础节点二</strong><i>↗</i></button>
+            <button class="model-option" data-model="show3.fbx" data-title="榫卯节点 03" data-description="具有更复杂接触面的结构节点，用几何精度换取连接稳定性。"><span>03</span><strong>基础节点三</strong><i>↗</i></button>
+            <button class="model-option" data-model="show4.fbx" data-title="榫卯节点 04" data-description="横向构件与主体结构的嵌合方式，兼顾承托与拆装。"><span>04</span><strong>基础节点四</strong><i>↗</i></button>
+            <button class="model-option" data-model="show5.fbx" data-title="榫卯节点 05" data-description="多构件组合节点，呈现传统木构中的层叠与协同受力。"><span>05</span><strong>基础节点五</strong><i>↗</i></button>
+            <button class="model-option" data-model="show6.fbx" data-title="榫卯节点 06" data-description="轻量化基础榫接，通过最少切削形成可靠的几何约束。"><span>06</span><strong>基础节点六</strong><i>↗</i></button>
+            <button class="model-option" data-model="show7.fbx" data-title="榫卯节点 07" data-description="转角连接节点，处理两个方向之间的结构转换。"><span>07</span><strong>基础节点七</strong><i>↗</i></button>
+            <button class="model-option" data-model="show8.fbx" data-title="榫卯节点 08" data-description="以插接关系组织构件，强化节点在不同受力方向上的稳定性。"><span>08</span><strong>基础节点八</strong><i>↗</i></button>
+            <button class="model-option" data-model="show9.fbx" data-title="榫卯节点 09" data-description="展示榫头比例、卯眼深度与结构强度之间的细微平衡。"><span>09</span><strong>基础节点九</strong><i>↗</i></button>
+            <button class="model-option" data-model="show10.fbx" data-title="榫卯节点 10" data-description="第十组基础连接样本，为数字化构件库提供可复用结构模块。"><span>10</span><strong>基础节点十</strong><i>↗</i></button>
+            <button class="model-option model-option-featured" data-model="roof-support-joint.fbx" data-title="楼顶支撑柱榫卯" data-description="屋顶支撑柱的完整榫卯关系，呈现建筑尺度下节点如何连接上部荷载与柱体。"><span>11</span><strong>屋顶支撑柱</strong><i>↗</i></button>
+            <button class="model-option model-option-featured" data-model="joint-collection.fbx" data-title="榫卯结构合集" data-description="项目榫卯资产的集中展示，用于整体理解不同节点之间的形态谱系。"><span>12</span><strong>结构合集</strong><i>↗</i></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
     <section class="lab section" id="lab">
       <div class="lab-heading reveal">
         <div>
-          <p class="section-index">02 / CO-CREATION LAB</p>
+        <p class="section-index">03 / CO-CREATION LAB</p>
           <h2>试着重组一件<br /><em>文化构件</em></h2>
         </div>
         <p>选择一种传统纹样，观察它如何从历史语汇转译成当代形态。</p>
@@ -184,7 +251,7 @@
 
     <section class="evidence section" id="evidence">
       <div class="section-title reveal">
-        <p class="section-index">03 / EVIDENCE</p>
+        <p class="section-index">04 / EVIDENCE</p>
         <h2>从概念走向<br /><em>真实体验</em></h2>
       </div>
       <div class="evidence-grid reveal">
@@ -204,7 +271,7 @@
 
     <section class="applications section" id="applications">
       <div class="application-intro reveal">
-        <p class="section-index">04 / APPLICATIONS</p>
+        <p class="section-index">05 / APPLICATIONS</p>
         <h2>让文化技术进入<br /><em>更多真实场景</em></h2>
         <p>融合 XR 可被配置为展览、课程、文旅体验与公共文化项目。</p>
       </div>
@@ -218,7 +285,7 @@
 
     <section class="contact section" id="contact">
       <div class="contact-card reveal">
-        <p class="section-index">05 / LET'S CREATE</p>
+        <p class="section-index">06 / LET'S CREATE</p>
         <h2>下一段文化体验<br />从这里开始。</h2>
         <p>如果你正在筹备一场展览、一门课程，或想让一处文化空间以新的方式被看见，欢迎和我们聊聊。</p>
         <div class="contact-actions">
@@ -238,13 +305,22 @@
 
   <dialog class="story-dialog" id="story-dialog">
     <button class="dialog-close" type="button" aria-label="关闭">×</button>
-    <div class="story-placeholder">
-      <span class="play-large">▶</span>
-      <p>项目影片预留区</p>
-      <small>可替换为 60 秒 XR 实录、空间扫描与共创过程视频</small>
+    <div class="story-player">
+      <video id="project-video" controls preload="metadata" poster="assets/video/project-poster.jpg">
+        <source src="assets\video\ronghe-xr-project.mp4" type="video/mp4" />
+        你的浏览器暂不支持 HTML5 视频。
+      </video>
+      <div class="story-caption">
+        <div>
+          <span>PROJECT DOCUMENTARY / 04:20</span>
+          <h3>融合 XR 项目实录</h3>
+        </div>
+        <p>Unity 场景、沉浸交互与项目完整体验流程。</p>
+      </div>
     </div>
   </dialog>
 
   <script src="script.js"></script>
+  <script type="module" src="model-gallery.js"></script>
 </body>
 </html>
