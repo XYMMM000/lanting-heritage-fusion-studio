@@ -90,3 +90,4 @@ python -m http.server 8000
 - 所有主要文本内容都可在 `index.html` 中直接编辑。
 - 设计风格使用深色、红色高亮与现代卡片布局，可根据需要自定义颜色变量。
 - 如需添加真实图片，请创建 `assets/gallery/` 或 `assets/team/` 文件夹，并在 HTML 中替换占位内容。
+URL: https://xymmm000.github.io/lanting-heritage-fusion-studio/
