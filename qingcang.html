@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="擎苍 QINGCANG：模块化、可快速换装的 3D 打印 FPV 无人机开放平台。" />
+  <meta name="theme-color" content="#080a0c" />
+  <title>擎苍 QINGCANG｜为下一次起飞而生</title>
+  <link rel="icon" type="image/jpeg" href="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" />
+  <link rel="stylesheet" href="qingcang.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./assets/vendor/three/three.module.min.js",
+        "three/addons/": "./assets/vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="qc-header" id="top">
+    <a class="qc-brand" href="#home" aria-label="擎苍首页">
+      <span class="brand-logo"><img src="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" alt="" /></span>
+      <span>擎苍<small>QINGCANG / FPV SYSTEMS</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
+    <nav class="qc-nav" aria-label="主导航">
+      <a href="#system">模块系统</a><a href="#flight">竞速体验</a><a href="#configurator">配置器</a>
+      <a href="#model">3D 机身</a><a href="#open">开放生态</a><a href="#progress">研发进度</a>
+      <a href="index.html">融合 XR</a><a href="lanting.html">岚亭</a>
+      <a class="nav-cta" href="#contact">申请测试</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="qc-hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-radar" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span>QC-03</span> MODULAR 3-INCH FPV PLATFORM</p>
+        <h1>坠落之后，<br /><em>十秒重返天空。</em></h1>
+        <p class="hero-lead">擎苍是一套围绕快速换装打造的 3D 打印 FPV 平台。无需焊接，无需工具，只替换真正损坏的部分。</p>
+        <div class="hero-actions">
+          <a class="qc-button primary" href="#configurator">组装你的擎苍 <span>↘</span></a>
+          <button class="qc-button ghost" id="play-flight" type="button"><b>▶</b> 查看试飞记录</button>
+        </div>
+        <div class="hero-specs">
+          <span><strong>&lt;10s</strong>核心模块更换</span><span><strong>100%</strong>无工具装配</span><span><strong>PA-CF</strong>碳纤维尼龙</span>
+        </div>
+      </div>
+      <div class="drone-stage reveal" aria-label="擎苍模块化 FPV 无人机">
+        <div class="stage-ring ring-one"></div><div class="stage-ring ring-two"></div>
+        <img src="assets/qingcang/hero-drone.jpeg" alt="模块化 FPV 无人机概念图" />
+        <button class="module-pin pin-camera" data-module="camera"><i></i><span>01 / CAMERA</span></button>
+        <button class="module-pin pin-core" data-module="core"><i></i><span>02 / CORE STACK</span></button>
+        <button class="module-pin pin-arm" data-module="frame"><i></i><span>03 / PRINTED ARM</span></button>
+        <div class="telemetry telemetry-top"><span>LINK</span><strong>98%</strong></div>
+        <div class="telemetry telemetry-bottom"><span>STATUS</span><strong>READY</strong></div>
+      </div>
+      <div class="hero-side"><span>ALT 032.8 M</span><i></i><span>35.282° N</span><span>120.956° E</span></div>
+      <a class="scroll-cue" href="#manifesto"><i></i>SCROLL TO ARM</a>
+    </section>
+
+    <section class="manifesto qc-section" id="manifesto">
+      <p class="section-code reveal">00 / THE MISSION</p>
+      <div class="manifesto-grid">
+        <h2 class="reveal">传统 FPV 把一次撞击<br />变成漫长的停飞。</h2>
+        <div class="manifesto-copy reveal">
+          <p>脆弱的一体化结构、焊接门槛和互不兼容的零件生态，让维修成本、学习成本和等待时间不断累积。擎苍重新设计的不是一架飞机，而是“损坏之后如何继续飞”。</p>
+          <div class="problem-strip"><span><b>30%+</b>维修费用可能占整机价值</span><span><b>LOCK-IN</b>品牌零件互不兼容</span><span><b>HIGH</b>装配与焊接门槛</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="system qc-section" id="system">
+      <div class="section-heading reveal">
+        <div><p class="section-code">01 / CLICK—LOCK SYSTEM</p><h2>像换弹匣一样，<br /><em>更换飞行模块。</em></h2></div>
+        <p>精密燕尾导轨完成机械定位，球头锁止提供刚性连接，镀金 Pogo Pin 同步传输电力与数据。咔哒一声，立即归队。</p>
+      </div>
+      <div class="swap-demo reveal">
+        <div class="swap-visual">
+          <div class="swap-track"></div>
+          <div class="swap-part part-camera"><span>CAM</span></div><div class="swap-part part-core"><span>PCB</span></div>
+          <div class="swap-part part-frame"><span>FRAME</span></div><div class="swap-part part-battery"><span>BAT</span></div>
+          <button id="swap-trigger" type="button"><span>执行快速换装</span><b>CLICK TO SWAP</b></button>
+        </div>
+        <div class="swap-data">
+          <article class="active" data-swap-info="camera"><span>01</span><h3>可换相机舱</h3><p>根据赛道光照与视角需求快速切换相机，无需拆解整机。</p></article>
+          <article data-swap-info="core"><span>02</span><h3>热插拔电控栈</h3><p>核心 PCB 模组在十秒内完成替换，把维修台留在过去。</p></article>
+          <article data-swap-info="frame"><span>03</span><h3>3D 打印结构件</h3><p>机臂与框架按需打印，只更换受损区域，也允许自由改型。</p></article>
+          <article data-swap-info="battery"><span>04</span><h3>任务化电池舱</h3><p>在轻量竞速和长续航之间切换，让一套平台覆盖不同任务。</p></article>
+        </div>
+      </div>
+      <div class="technology-grid reveal">
+        <article><span>MECHANICAL</span><h3>精密 Click-Lock</h3><p>燕尾导向与球头锁止，确保每次装配都精准、稳定、无工具。</p></article>
+        <article><span>CONNECTIVITY</span><h3>镀金 Pogo Pin</h3><p>可靠传输电力与数据，不焊接，也不牺牲快速维护能力。</p></article>
+        <article><span>MATERIAL</span><h3>PA-CF 结构材料</h3><p>碳纤维增强尼龙，在重量、韧性与可制造性之间取得平衡。</p></article>
+        <article><span>GENERATIVE</span><h3>轻量晶格设计</h3><p>生成式晶格结构可降低约 40% 重量，同时按需快速迭代。</p></article>
+      </div>
+    </section>
+
+    <section class="vibration qc-section" id="vibration">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-code">02 / GYRO SPECTRUM TEST</p>
+          <h2>不只看起来不同，<br /><em>振动也留下了证据。</em></h2>
+        </div>
+        <p>陀螺仪频谱把飞行中的结构振动转化为可见信号。峰值越集中、宽频噪声越少，通常意味着飞控需要处理的机械振动干扰更少。</p>
+      </div>
+
+      <div class="spectrum-comparison reveal">
+        <figure class="spectrum-card spectrum-qingcang">
+          <div class="spectrum-image">
+            <img src="assets/qingcang/ff97fe0fc436d18a628f32bdee1ad74c.jpg" alt="擎苍原型机陀螺仪频谱图，振动能量主要集中于低频区域" loading="lazy" />
+            <span class="spectrum-badge">QINGCANG PROTOTYPE</span>
+          </div>
+          <figcaption>
+            <span>TEST 01 / 3D-PRINTED FRAME</span>
+            <h3>擎苍原型机</h3>
+            <p>当前测试截图中，主要振动能量集中在低频区域，并在约 20–40 Hz 后快速衰减；可见频段内未出现类似对比机架的突出中高频窄带峰。</p>
+          </figcaption>
+        </figure>
+
+        <div class="spectrum-versus" aria-hidden="true"><span>VS</span><i></i></div>
+
+        <figure class="spectrum-card spectrum-carbon">
+          <div class="spectrum-image">
+            <img src="assets/qingcang/24da1626fd9823b3fad3ad77cdd54224.jpg" alt="对比碳纤维 FPV 机架陀螺仪频谱图，存在更宽的振动能量分布与约 115 Hz 峰值" loading="lazy" />
+            <span class="spectrum-badge">CARBON-FIBER REFERENCE</span>
+          </div>
+          <figcaption>
+            <span>TEST 02 / REFERENCE FRAME</span>
+            <h3>对比碳纤维机架</h3>
+            <p>该对比截图呈现更宽的低至中频能量分布，并标出了约 115 Hz 的明显噪声峰；这意味着飞控滤波需要面对更复杂的振动成分。</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="spectrum-reading reveal">
+        <article><span>01 / ENERGY</span><strong>更快衰减</strong><p>擎苍样本的可见振动能量更早回落至较低水平。</p></article>
+        <article><span>02 / PEAKS</span><strong>较少突出峰值</strong><p>当前截图中未观察到对比样本约 115 Hz 一类的显著窄带峰。</p></article>
+        <article><span>03 / CONTROL</span><strong>更干净的输入基础</strong><p>较简单的频谱通常有利于滤波与 PID 调校，但仍需更多同条件测试验证。</p></article>
+      </div>
+
+      <p class="spectrum-note reveal">
+        测试说明：以上结论仅基于当前两组陀螺仪频谱截图的可见特征。两图显示频宽不同，且电机、桨叶、转速、飞控参数、采样与滤波设置尚未完全统一，因此不用于得出材料或机架性能的绝对结论。后续将通过同动力、同参数、同工况的重复测试建立可量化结果。
+      </p>
+    </section>
+
+    <section class="flight" id="flight">
+      <div class="flight-screen">
+        <img src="assets/qingcang/fpv-flight.png" alt="FPV 夜间飞行第一视角" loading="lazy" />
+        <div class="flight-scan"></div>
+        <div class="osd osd-left"><span>QINGCANG // PILOT 01</span><strong>ARMED</strong><small>MODE: ACRO</small></div>
+        <div class="osd osd-right"><span>RSSI 98</span><strong>16.7V</strong><small>03:42 FLIGHT</small></div>
+        <div class="reticle"><i></i><i></i><b></b></div>
+        <div class="flight-copy reveal">
+          <p class="section-code">03 / PILOT EXPERIENCE</p><h2>为撞击而准备。<br /><em>为重返赛道而设计。</em></h2>
+          <p>竞速玩家要性能，也要快速维修；自由式玩家要耐用，也要个性；新手需要更低的进入门槛。擎苍让每一种飞行风格都从同一套开放底座开始。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="configurator qc-section" id="configurator">
+      <div class="section-heading reveal">
+        <div><p class="section-code">04 / BUILD YOUR FLIGHT</p><h2>一架无人机，<br /><em>不止一种形态。</em></h2></div>
+        <p>选择你的飞行方式。配置器会实时计算重量、敏捷度、续航和预计价格。</p>
+      </div>
+      <div class="config-shell reveal">
+        <div class="config-preview" data-color="lime">
+          <div class="preview-label"><span>LIVE BUILD / QC-03</span><b id="build-name">RACE SPEC</b></div>
+          <img id="config-image" src="assets/qingcang/prototype-hand.jpeg" alt="擎苍 FPV 原型机" />
+          <div class="config-crosshair"></div>
+          <div class="color-swatches" aria-label="选择机身色彩">
+            <button class="swatch active" style="--swatch:#e7ff42" data-color="lime" aria-label="电光绿"></button>
+            <button class="swatch" style="--swatch:#ff5a1f" data-color="orange" aria-label="竞速橙"></button>
+            <button class="swatch" style="--swatch:#e7eaed" data-color="white" aria-label="工程白"></button>
+          </div>
+        </div>
+        <div class="config-controls">
+          <p class="control-label">01 / 选择飞行预设</p>
+          <div class="preset-list">
+            <button class="preset active" data-preset="race"><span>RACE</span><strong>极速竞速</strong><small>轻量 / 高响应</small></button>
+            <button class="preset" data-preset="freestyle"><span>FREE</span><strong>自由飞行</strong><small>耐撞 / 高扭矩</small></button>
+            <button class="preset" data-preset="explorer"><span>LONG</span><strong>探索续航</strong><small>长航时 / 稳定</small></button>
+          </div>
+          <p class="control-label">02 / 当前飞行数据</p>
+          <div class="build-metrics">
+            <div><span>起飞重量</span><strong id="metric-weight">248<small>g</small></strong></div>
+            <div><span>预计续航</span><strong id="metric-flight">6.5<small>min</small></strong></div>
+            <div><span>敏捷指数</span><strong id="metric-agility">96<small>/100</small></strong></div>
+            <div><span>预估价格</span><strong id="metric-price">$699</strong></div>
+          </div>
+          <div class="build-bars">
+            <label>速度<i><b id="bar-speed"></b></i></label><label>耐久<i><b id="bar-durability"></b></i></label><label>续航<i><b id="bar-range"></b></i></label>
+          </div>
+          <a class="qc-button primary wide" href="#contact">保存配置并申请测试 <span>↘</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manufacturing qc-section" id="manufacturing">
+      <div class="manufacturing-grid">
+        <div class="manufacturing-copy reveal">
+          <p class="section-code">05 / PRINTED ON DEMAND</p><h2>制造，不再远离设计。</h2>
+          <p>3D 打印让结构改型、备件生产与小批量迭代发生在同一条链路中。昨天的飞行反馈，可以成为今天的新机臂。</p>
+          <dl><div><dt>材料</dt><dd>Carbon Fiber Nylon / PA-CF</dd></div><div><dt>结构</dt><dd>Generative Lattice</dd></div><div><dt>生产</dt><dd>On-Demand Distributed Printing</dd></div></dl>
+        </div>
+        <div class="manufacturing-gallery reveal">
+          <figure class="print-main"><img src="assets/qingcang/printing-frame.jpeg" alt="3D 打印机正在制造无人机框架" loading="lazy" /><figcaption>FRAME / PRINT 02:46:18</figcaption></figure>
+          <figure><img src="assets/qingcang/printed-shell.jpeg" alt="3D 打印无人机外壳" loading="lazy" /><figcaption>STRUCTURE 01</figcaption></figure>
+          <figure><img src="assets/qingcang/printer-farm.jpeg" alt="3D 打印设备阵列" loading="lazy" /><figcaption>MICRO FACTORY</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="stl-lab qc-section" id="model">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-code">06 / INTERACTIVE ENGINEERING MODEL</p>
+          <h2>从打印文件，<br /><em>直接进入真实结构。</em></h2>
+        </div>
+        <p>这是擎苍五寸机机身的真实 STL 工程模型。拖动观察整体构型，滚轮或双指缩放，近距离查看一体化机臂、中心舱与结构连接关系。</p>
+      </div>
+
+      <div class="stl-viewer reveal" id="stl-viewer">
+        <div class="stl-stage">
+          <canvas id="stl-canvas" aria-label="可旋转缩放的擎苍五寸机机身三维模型"></canvas>
+          <div class="stl-loading" id="stl-loading">
+            <span></span>
+            <strong>正在构建五寸机数字模型</strong>
+            <small id="stl-progress">等待加载 STL</small>
+          </div>
+          <div class="stl-topline"><span>LIVE STL / WEBGL</span><span id="stl-status">MODEL QC-5F</span></div>
+          <div class="stl-help"><span>拖动旋转</span><i></i><span>滚轮 / 双指缩放</span><i></i><span>双击复位</span></div>
+          <div class="stl-corner corner-a"></div><div class="stl-corner corner-b"></div>
+        </div>
+        <aside class="stl-panel">
+          <p class="section-code">DIGITAL ASSET / 001</p>
+          <h3>五寸机机身</h3>
+          <p>来自擎苍工程装配体的原始三角网格。模型在浏览器中实时解析和渲染，无需安装 CAD 软件。</p>
+          <dl>
+            <div><dt>文件格式</dt><dd>Binary STL</dd></div>
+            <div><dt>文件大小</dt><dd>605 KB</dd></div>
+            <div><dt>网格面数</dt><dd id="stl-faces">读取中</dd></div>
+            <div><dt>显示模式</dt><dd id="stl-mode-label">实体 + 结构线</dd></div>
+          </dl>
+          <div class="stl-actions">
+            <button id="stl-reset" type="button">复位视角 <span>↺</span></button>
+            <button id="stl-wireframe" type="button">切换线框 <span>⌗</span></button>
+            <button id="stl-rotate" class="active" type="button">自动旋转 <span>●</span></button>
+          </div>
+          <a class="stl-download" href="assets/qingcang/装配体2%20-%20五寸机%20机身-1.STL" download>下载原始 STL <span>↓</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="open qc-section" id="open">
+      <div class="section-heading reveal">
+        <div><p class="section-code">07 / OPEN SKY NETWORK</p><h2>打印它，改造它，<br /><em>再把它分享出去。</em></h2></div>
+        <p>擎苍不仅出售硬件，也建立由飞手、设计师和创客共同进化的模块市场。每个 STL、每次测试和每种改造，都能成为平台的一部分。</p>
+      </div>
+      <div class="network-map reveal">
+        <div class="network-orbit"></div><div class="network-core"><span>QC</span><strong>OPEN<br />CORE</strong></div>
+        <button class="node node-a"><i></i><span>护桨结构<small>SUZHOU / V.03</small></span></button>
+        <button class="node node-b"><i></i><span>低光相机舱<small>LONDON / V.07</small></span></button>
+        <button class="node node-c"><i></i><span>竞速轻量机臂<small>SHENZHEN / V.12</small></span></button>
+        <button class="node node-d"><i></i><span>长续航电池架<small>BERLIN / V.04</small></span></button>
+        <div class="network-stats"><span><b>STL</b>开放模型交易</span><span><b>15–20%</b>创作者交易佣金</span><span><b>GLOBAL</b>分布式迭代网络</span></div>
+      </div>
+    </section>
+
+    <section class="progress qc-section" id="progress">
+      <div class="section-heading reveal">
+        <div><p class="section-code">08 / FROM PROTOTYPE TO SKY</p><h2>原型已经起飞，<br /><em>系统正在成形。</em></h2></div>
+        <p>3 英寸 FPV 功能原型已完成并通过多次飞行与特技测试。下一阶段将集中完成快拆接口、材料验证和社区压力测试。</p>
+      </div>
+      <div class="prototype-proof reveal">
+        <figure><img src="assets/qingcang/prototype-detail.jpeg" alt="擎苍原型内部电控结构" loading="lazy" /><figcaption>FUNCTIONAL PROTOTYPE / CORE STACK</figcaption></figure>
+        <figure><img src="assets/qingcang/prototype-vertical.jpeg" alt="擎苍绿色 FPV 无人机原型" loading="lazy" /><figcaption>FLIGHT TEST UNIT / QC-P01</figcaption></figure>
+        <div class="prototype-status"><span>PROTOTYPE STATUS</span><strong>FLIGHT<br />PROVEN</strong><p><i></i>基础飞行测试完成</p><p><i></i>多项空中特技验证</p><p class="pending"><i></i>快拆模块工程化中</p></div>
+      </div>
+      <div class="roadmap reveal">
+        <article class="active"><span>M 01—06</span><h3>系统定型</h3><p>接口设计、材料测试与固件开发</p></article>
+        <article><span>M 07—09</span><h3>社区压力测试</h3><p>招募飞手验证强度与维护效率</p></article>
+        <article><span>M 10—12</span><h3>供应网络</h3><p>建立零部件与打印合作伙伴体系</p></article>
+        <article><span>MONTH 13</span><h3>公开发售</h3><p>启动众筹与首批预订</p></article>
+        <article><span>M 14—24</span><h3>开放市场</h3><p>扩展产能并上线数字配件生态</p></article>
+      </div>
+    </section>
+
+    <section class="contact qc-section" id="contact">
+      <div class="contact-panel reveal">
+        <p class="section-code">09 / JOIN THE FIRST FORMATION</p><h2>下一次起飞，<br /><em>留一个位置给你。</em></h2>
+        <p>我们正在寻找 FPV 飞手、结构设计师、3D 打印伙伴与早期支持者，共同把模块化飞行平台推向真实赛道。</p>
+        <div class="contact-actions"><a class="qc-button primary" href="mailto:zhangrunze956@gmail.com">申请成为测试飞手 <span>↗</span></a><a class="qc-button ghost" href="mailto:zhangrunze956@gmail.com">技术与合作咨询</a></div>
+        <span class="contact-code">QC / 03<br />READY TO ARM</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="qc-footer">
+    <div class="qc-brand"><span class="brand-logo footer-brand-logo"><img src="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" alt="擎苍 QingC Logo" /></span><span>擎苍<small>QINGCANG / FPV SYSTEMS</small></span></div>
+    <p>Modular &amp; Swappable 3D-Printed FPV Platform</p><p>© <span id="year"></span> QINGCANG</p>
+  </footer>
+
+  <dialog class="flight-dialog" id="flight-dialog">
+    <button class="dialog-close" type="button" aria-label="关闭">×</button>
+    <video id="flight-video" controls playsinline preload="metadata"><source src="assets/qingcang/flight-test.mp4" type="video/mp4" /></video>
+    <div><span>QC-P01 / FLIGHT TEST</span><strong>真实原型试飞记录</strong></div>
+  </dialog>
+  <script src="qingcang.js"></script>
+  <script type="module" src="qingcang-model.js"></script>
+</body>
+</html>
