@@ -59,6 +59,20 @@ a { color: inherit; }
   gap: 12px;
   text-decoration: none;
 }
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  display: block;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+.ronghe-header-logo {
+  width: 116px;
+  height: 58px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
 .brand-seal {
   width: 38px;
   height: 38px;
@@ -137,6 +151,13 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   mask-image: linear-gradient(90deg, transparent, #000 55%);
 }
 .hero-copy { position: relative; z-index: 3; width: 100%; min-width: 0; max-width: 780px; }
+.ronghe-hero-logo {
+  width: min(330px, 56vw);
+  height: auto;
+  display: block;
+  margin: 0 0 30px clamp(24px, 7vw, 110px);
+  border: 1px solid rgba(216,73,50,.34);
+}
 .kicker span { margin-right: 22px; color: var(--paper); }
 .hero h1 {
   margin: 28px 0;
@@ -722,6 +743,12 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 }
 .footer-brand { display: flex; align-items: center; gap: 12px; color: var(--paper); font-family: var(--serif); font-size: 14px; }
 .footer-brand .brand-seal { width: 30px; height: 30px; }
+.ronghe-footer-logo {
+  width: 112px;
+  height: 62px;
+  display: block;
+  object-fit: cover;
+}
 .site-footer p:nth-child(2) { text-align: center; }
 .site-footer p:last-child { text-align: right; }
 
@@ -758,26 +785,28 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 .reveal.visible { opacity: 1; transform: none; }
 
 .lanting-site {
-  --ink: #172019;
-  --paper: #f4efe4;
-  --paper-dim: #6f766b;
-  --cinnabar: #c8452f;
-  --cinnabar-dark: #7f2a20;
-  --jade: #4f735f;
-  --line: rgba(23, 32, 25, .14);
+  --ink: #1a294f;
+  --paper: #f0ead4;
+  --paper-dim: #667085;
+  --cinnabar: #d54b38;
+  --cinnabar-dark: #9e3025;
+  --jade: #9fc5e8;
+  --sky: #a8c9e8;
+  --panel: #e7e6e6;
+  --line: rgba(26, 41, 79, .16);
   color: var(--ink);
   background:
-    linear-gradient(rgba(244,239,228,.92), rgba(244,239,228,.92)),
-    url("assets/lanting/image1.jpeg") center / cover fixed;
+    linear-gradient(90deg, rgba(168,201,232,.12) 0 22%, transparent 22% 100%),
+    #f7f8fa;
 }
 .lanting-site .grain { opacity: .06; }
 .lanting-header.scrolled {
-  background: rgba(244, 239, 228, .88);
+  background: rgba(247, 248, 250, .92);
   border-color: var(--line);
 }
 .lanting-header .brand-name small,
 .lanting-site .site-nav a {
-  color: rgba(23, 32, 25, .62);
+  color: rgba(26, 41, 79, .62);
 }
 .lanting-site .site-nav a:hover,
 .lanting-site .site-nav a.active {
@@ -785,7 +814,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 }
 .lanting-site .site-nav .nav-cta {
   color: var(--ink);
-  border-color: rgba(23, 32, 25, .35);
+  border-color: rgba(26, 41, 79, .35);
 }
 .lanting-header .site-nav { gap: 22px; }
 
@@ -799,8 +828,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   padding: 140px clamp(24px, 7vw, 110px) 96px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(244,239,228,.97) 0 48%, rgba(244,239,228,.72) 100%),
-    url("assets/lanting/image1.jpeg") center / cover;
+    linear-gradient(90deg, rgba(168,201,232,.92) 0 24%, rgba(247,248,250,.97) 24% 62%, rgba(231,230,230,.9) 62% 100%);
 }
 .lanting-hero::before {
   content: "";
@@ -808,18 +836,18 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   inset: 14% 5% auto auto;
   width: min(48vw, 640px);
   aspect-ratio: 1.5;
-  border: 1px solid rgba(23,32,25,.14);
+  border: 1px solid rgba(26,41,79,.14);
   background:
-    linear-gradient(90deg, transparent 0 18%, rgba(200,69,47,.85) 18% 19%, transparent 19% 100%),
-    linear-gradient(0deg, transparent 0 52%, rgba(79,115,95,.65) 52% 53%, transparent 53% 100%);
+    linear-gradient(90deg, transparent 0 18%, rgba(213,75,56,.82) 18% 19%, transparent 19% 100%),
+    linear-gradient(0deg, transparent 0 52%, rgba(26,41,79,.64) 52% 53%, transparent 53% 100%);
   clip-path: polygon(4% 65%, 50% 8%, 96% 65%, 85% 60%, 80% 88%, 20% 88%, 15% 60%);
   opacity: .26;
 }
 .lanting-hero-media {
   position: absolute;
   inset: 0;
-  opacity: .18;
-  mix-blend-mode: multiply;
+  opacity: .08;
+  mix-blend-mode: luminosity;
 }
 .lanting-hero-media img {
   width: 100%;
@@ -829,6 +857,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 .lanting-hero-copy {
   position: relative;
   z-index: 2;
+  min-width: 0;
   max-width: 820px;
 }
 .lanting-hero h1 {
@@ -847,14 +876,15 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   margin-left: clamp(18px, 5vw, 86px);
 }
 .lanting-hero .hero-intro {
-  color: rgba(23,32,25,.7);
+  color: rgba(26,41,79,.72);
 }
 .lanting-hero .button-quiet {
-  color: rgba(23,32,25,.72);
+  color: rgba(26,41,79,.72);
 }
 .lanting-hero-card {
   position: relative;
   z-index: 2;
+  min-width: 0;
   align-self: end;
   padding: 34px;
   color: var(--paper);
@@ -873,10 +903,10 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 }
 .lanting-hero-card p {
   margin: 0;
-  color: rgba(244,239,228,.62);
+  color: rgba(240,234,212,.68);
   font-size: 13px;
 }
-.lanting-hero .scroll-cue { color: rgba(23,32,25,.5); }
+.lanting-hero .scroll-cue { color: rgba(26,41,79,.5); }
 
 .lanting-about { border-bottom: 1px solid var(--line); }
 .lanting-about-grid {
@@ -887,7 +917,20 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   margin-top: 46px;
 }
 .lanting-about h2 { margin: 0; }
-.lanting-about .manifesto-copy > p { color: rgba(23,32,25,.68); }
+.lanting-about .manifesto-copy > p { color: rgba(26,41,79,.68); }
+.lanting-brand-signature {
+  margin-top: clamp(54px, 7vw, 96px);
+  padding: clamp(20px, 3vw, 38px);
+  overflow: hidden;
+  background: #fff;
+  border-left: 6px solid var(--sky);
+}
+.lanting-brand-signature img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: multiply;
+}
 
 .lanting-business {
   width: 100%;
@@ -950,7 +993,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   letter-spacing: 0;
 }
 .lanting-services .application-intro > p:last-child {
-  color: rgba(23,32,25,.6);
+  color: rgba(26,41,79,.62);
 }
 .lanting-model {
   display: grid;
@@ -962,7 +1005,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 .lanting-model article {
   min-height: 270px;
   padding: 32px;
-  background: rgba(244,239,228,.72);
+  background: rgba(231,230,230,.76);
 }
 .lanting-model span {
   color: var(--cinnabar);
@@ -973,7 +1016,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   font-size: 28px;
 }
 .lanting-model p {
-  color: rgba(23,32,25,.62);
+  color: rgba(26,41,79,.64);
 }
 
 .lanting-work-grid {
@@ -989,7 +1032,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   justify-content: flex-end;
   color: var(--paper);
   background:
-    linear-gradient(145deg, rgba(23,32,25,.96), rgba(23,32,25,.78)),
+    linear-gradient(145deg, rgba(26,41,79,.98), rgba(26,41,79,.82)),
     url("assets/lanting/image1.jpeg") center / cover;
   border-top: 4px solid var(--cinnabar);
 }
@@ -1003,7 +1046,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 .featured-work {
   grid-column: span 2;
   background:
-    linear-gradient(130deg, rgba(23,32,25,.98), rgba(200,69,47,.7)),
+    linear-gradient(130deg, rgba(26,41,79,.98), rgba(213,75,56,.72)),
     url("assets/lanting/image1.jpeg") center / cover;
 }
 .featured-work img {
@@ -1020,7 +1063,34 @@ h2 em { color: var(--cinnabar); font-style: normal; }
 }
 .work-card p {
   margin: 0;
-  color: rgba(244,239,228,.65);
+  color: rgba(240,234,212,.7);
+}
+.dream-work {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: minmax(240px, .78fr) 1.22fr;
+  grid-template-rows: auto auto 1fr;
+  column-gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  background: var(--ink);
+}
+.dream-work img {
+  grid-row: 1 / 4;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  margin: 0;
+  object-fit: contain;
+  background: #fff;
+}
+.dream-work h3 {
+  margin-top: 24px;
+  font-size: clamp(34px, 4vw, 54px);
+}
+.dream-work p {
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 2;
 }
 .product-strip {
   display: grid;
@@ -1112,13 +1182,13 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(23,32,25,.16);
-  border: 1px solid rgba(23,32,25,.16);
+  background: rgba(26,41,79,.16);
+  border: 1px solid rgba(26,41,79,.16);
 }
 .lanting-timeline article {
   min-height: 250px;
   padding: 34px;
-  background: #f4efe4;
+  background: rgba(231,230,230,.76);
 }
 .lanting-timeline span {
   color: var(--cinnabar);
@@ -1129,7 +1199,7 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   font-size: 31px;
 }
 .lanting-timeline p {
-  color: rgba(23,32,25,.62);
+  color: rgba(26,41,79,.64);
 }
 .lanting-contact {
   background: var(--ink);
@@ -1146,10 +1216,16 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   color: rgba(244,239,228,.08);
 }
 .lanting-footer {
-  color: rgba(23,32,25,.5);
+  color: rgba(26,41,79,.5);
 }
 .lanting-footer .footer-brand {
   color: var(--ink);
+}
+.footer-logo {
+  width: 34px;
+  height: 34px;
+  display: block;
+  object-fit: cover;
 }
 
 @media (max-width: 980px) {
@@ -1186,6 +1262,11 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   .lanting-hero-card { max-width: 520px; }
   .lanting-metrics, .lanting-work-grid, .lanting-timeline { grid-template-columns: 1fr 1fr; }
   .featured-work { grid-column: span 2; }
+  .dream-work {
+    grid-column: span 2;
+    grid-template-columns: minmax(220px, .7fr) 1.3fr;
+  }
+  .dream-work img { min-height: 460px; }
   .scene-gallery {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 240px;
@@ -1199,10 +1280,22 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   .section { width: min(100% - 32px, var(--max)); padding: 92px 0; }
   .site-header { height: 70px; padding: 0 18px; }
   .site-nav { top: 70px; }
-  .lanting-site .site-nav { background: rgba(244,239,228,.97); }
+  .lanting-site .site-nav { background: rgba(247,248,250,.98); }
   .lanting-site .nav-toggle span { background: var(--ink); }
   .brand-name small { display: none; }
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+  .ronghe-header-logo {
+    width: 92px;
+    height: 46px;
+  }
   .hero { padding: 120px 20px 90px; align-items: start; }
+  .ronghe-hero-logo {
+    width: min(280px, 78vw);
+    margin: 24px 0 22px 20px;
+  }
   .hero h1 { margin-top: 54px; font-size: clamp(54px, 18vw, 76px); letter-spacing: -.06em; }
   .hero h1 em { margin-left: 20px; }
   .hero-intro, .hero-actions { margin-left: 20px; }
@@ -1245,21 +1338,61 @@ h2 em { color: var(--cinnabar); font-style: normal; }
   .site-footer { grid-template-columns: 1fr; gap: 16px; text-align: left; }
   .site-footer p:nth-child(2), .site-footer p:last-child { text-align: left; }
   .story-caption { grid-template-columns: 1fr; gap: 10px; }
-  .lanting-hero { padding: 112px 20px 92px; }
-  .lanting-hero h1 { font-size: clamp(82px, 30vw, 128px); }
+  .lanting-hero {
+    padding: 112px 20px 92px;
+    overflow-x: clip;
+  }
+  .lanting-hero h1 {
+    font-size: clamp(76px, 27vw, 108px);
+    white-space: nowrap;
+  }
   .lanting-hero-line,
   .lanting-hero .hero-intro,
   .lanting-hero .hero-actions {
     margin-left: 0;
   }
-  .lanting-hero-card { padding: 24px; }
+  .lanting-hero-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+  .lanting-hero-card strong {
+    font-size: 26px;
+  }
+  .lanting-brand-signature {
+    margin-top: 48px;
+    padding: 12px;
+    border-left-width: 4px;
+  }
   .lanting-metrics,
   .lanting-model,
   .lanting-work-grid,
   .lanting-timeline {
     grid-template-columns: 1fr;
   }
-  .featured-work { grid-column: auto; }
+  .featured-work,
+  .dream-work {
+    grid-column: auto;
+  }
+  .dream-work {
+    display: flex;
+  }
+  .dream-work img {
+    width: calc(100% + 60px);
+    height: 390px;
+    min-height: 0;
+    margin: -30px -30px 26px;
+  }
+  .dream-work h3 {
+    margin-top: 18px;
+    font-size: 34px;
+  }
+  .dream-work p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
   .lanting-proof {
     display: block;
   }
