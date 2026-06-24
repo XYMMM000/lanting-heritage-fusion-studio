@@ -2,20 +2,21 @@ const header = document.querySelector('.site-header');
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.site-nav');
 const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
+const year = document.getElementById('year');
 
-document.getElementById('year').textContent = new Date().getFullYear();
+if (year) year.textContent = new Date().getFullYear();
 
 window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 40);
+  header?.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
 navToggle?.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
+  const open = nav?.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', String(open));
 });
 
 navLinks.forEach(link => link.addEventListener('click', () => {
-  nav.classList.remove('open');
+  nav?.classList.remove('open');
   navToggle?.setAttribute('aria-expanded', 'false');
 }));
 
@@ -72,6 +73,7 @@ const descriptions = {
 
 motifButtons.forEach(button => {
   button.addEventListener('click', () => {
+    if (!artifact || !formName || !artifactDescription) return;
     motifButtons.forEach(item => item.classList.remove('active'));
     button.classList.add('active');
     const type = button.dataset.artifact;
@@ -83,6 +85,7 @@ motifButtons.forEach(button => {
 });
 
 document.getElementById('generate-button')?.addEventListener('click', event => {
+  if (!artifact) return;
   artifact.classList.remove('is-generating');
   requestAnimationFrame(() => artifact.classList.add('is-generating'));
   event.currentTarget.querySelector('span').textContent = '形态生成完成';
@@ -95,16 +98,16 @@ const storyDialog = document.getElementById('story-dialog');
 const projectVideo = document.getElementById('project-video');
 
 document.getElementById('play-story')?.addEventListener('click', () => {
-  storyDialog.showModal();
+  storyDialog?.showModal();
   projectVideo?.play().catch(() => {});
 });
 
 function closeStory() {
   projectVideo?.pause();
-  storyDialog.close();
+  storyDialog?.close();
 }
 
-storyDialog?.querySelector('.dialog-close').addEventListener('click', closeStory);
+storyDialog?.querySelector('.dialog-close')?.addEventListener('click', closeStory);
 storyDialog?.addEventListener('click', event => {
   if (event.target === storyDialog) closeStory();
 });
@@ -112,10 +115,12 @@ storyDialog?.addEventListener('close', () => projectVideo?.pause());
 
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const architecture = document.querySelector('.hero-architecture');
-  window.addEventListener('pointermove', event => {
-    if (window.innerWidth < 900) return;
-    const x = (event.clientX / window.innerWidth - 0.5) * 10;
-    const y = (event.clientY / window.innerHeight - 0.5) * 7;
-    architecture.style.transform = `perspective(900px) rotateY(${-8 + x * 0.25}deg) translate(${x}px, ${y}px)`;
-  }, { passive: true });
+  if (architecture) {
+    window.addEventListener('pointermove', event => {
+      if (window.innerWidth < 900) return;
+      const x = (event.clientX / window.innerWidth - 0.5) * 10;
+      const y = (event.clientY / window.innerHeight - 0.5) * 7;
+      architecture.style.transform = `perspective(900px) rotateY(${-8 + x * 0.25}deg) translate(${x}px, ${y}px)`;
+    }, { passive: true });
+  }
 }
