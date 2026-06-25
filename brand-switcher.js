@@ -83,6 +83,9 @@
     network.setAttribute('aria-hidden', 'false');
     trigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('brand-network-locked');
+    try {
+      sessionStorage.setItem('brand-network-seen', '1');
+    } catch {}
     closeButton.focus();
   };
 
@@ -114,7 +117,13 @@
     });
   });
 
-  if (new URLSearchParams(location.search).get('brand-network') === 'open') {
+  let hasSeenNetwork = false;
+  try {
+    hasSeenNetwork = sessionStorage.getItem('brand-network-seen') === '1';
+  } catch {}
+
+  const forceOpen = new URLSearchParams(location.search).get('brand-network') === 'open';
+  if (forceOpen || !hasSeenNetwork) {
     window.requestAnimationFrame(open);
   }
 })();
