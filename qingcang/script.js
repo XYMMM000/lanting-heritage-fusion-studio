@@ -50,9 +50,9 @@ document.querySelectorAll('.module-pin').forEach(pin => pin.addEventListener('cl
 }));
 
 const presets = {
-  race: { name:'RACE SPEC', weight:'248', flight:'6.5', agility:'96', price:'$699', speed:'96%', durability:'62%', range:'48%', image:'assets/qingcang/prototype-hand.jpeg' },
-  freestyle: { name:'FREESTYLE SPEC', weight:'286', flight:'7.2', agility:'84', price:'$649', speed:'82%', durability:'94%', range:'58%', image:'assets/qingcang/prototype-vertical.jpeg' },
-  explorer: { name:'EXPLORER SPEC', weight:'318', flight:'11.5', agility:'68', price:'$599', speed:'66%', durability:'80%', range:'96%', image:'assets/qingcang/prototype-detail.jpeg' }
+  race: { name:'RACE SPEC', weight:'248', flight:'6.5', agility:'96', price:'$699', speed:'96%', durability:'62%', range:'48%', image:'assets/prototype-hand.jpeg' },
+  freestyle: { name:'FREESTYLE SPEC', weight:'286', flight:'7.2', agility:'84', price:'$649', speed:'82%', durability:'94%', range:'58%', image:'assets/prototype-vertical.jpeg' },
+  explorer: { name:'EXPLORER SPEC', weight:'318', flight:'11.5', agility:'68', price:'$599', speed:'66%', durability:'80%', range:'96%', image:'assets/prototype-detail.jpeg' }
 };
 document.querySelectorAll('.preset').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('.preset').forEach(item => item.classList.remove('active'));

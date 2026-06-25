@@ -6,14 +6,14 @@
   <meta name="description" content="擎苍 QINGCANG：模块化、可快速换装的 3D 打印 FPV 无人机开放平台。" />
   <meta name="theme-color" content="#080a0c" />
   <title>擎苍 QINGCANG｜为下一次起飞而生</title>
-  <link rel="icon" type="image/jpeg" href="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" />
-  <link rel="stylesheet" href="qingcang.css" />
-  <link rel="stylesheet" href="brand-switcher.css?v=20260625-2" />
+  <link rel="icon" type="image/jpeg" href="assets/168459effa38eb2948cb0e5914bbaff5.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../shared/brand-switcher.css?v=20260625-5" />
   <script type="importmap">
     {
       "imports": {
-        "three": "./assets/vendor/three/three.module.min.js",
-        "three/addons/": "./assets/vendor/three/addons/"
+        "three": "../shared/vendor/three/three.module.min.js",
+        "three/addons/": "../shared/vendor/three/addons/"
       }
     }
   </script>
@@ -24,7 +24,7 @@
 
   <header class="qc-header" id="top">
     <a class="qc-brand" href="#home" aria-label="擎苍首页">
-      <span class="brand-logo"><img src="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" alt="" /></span>
+      <span class="brand-logo"><img src="assets/168459effa38eb2948cb0e5914bbaff5.jpg" alt="" /></span>
       <span>擎苍<small>QINGCANG / FPV SYSTEMS</small></span>
     </a>
     <button class="nav-toggle" aria-label="打开导航" aria-expanded="false"><span></span><span></span></button>
@@ -52,7 +52,7 @@
       </div>
       <div class="drone-stage reveal" aria-label="擎苍模块化 FPV 无人机">
         <div class="stage-ring ring-one"></div><div class="stage-ring ring-two"></div>
-        <img src="assets/qingcang/hero-drone.jpeg" alt="模块化 FPV 无人机概念图" />
+        <img src="assets/hero-drone.jpeg" alt="模块化 FPV 无人机概念图" />
         <button class="module-pin pin-camera" data-module="camera"><i></i><span>01 / CAMERA</span></button>
         <button class="module-pin pin-core" data-module="core"><i></i><span>02 / CORE STACK</span></button>
         <button class="module-pin pin-arm" data-module="frame"><i></i><span>03 / PRINTED ARM</span></button>
@@ -113,7 +113,7 @@
       <div class="spectrum-comparison reveal">
         <figure class="spectrum-card spectrum-qingcang">
           <div class="spectrum-image">
-            <img src="assets/qingcang/ff97fe0fc436d18a628f32bdee1ad74c.jpg" alt="擎苍原型机陀螺仪频谱图，振动能量主要集中于低频区域" loading="lazy" />
+            <img src="assets/ff97fe0fc436d18a628f32bdee1ad74c.jpg" alt="擎苍原型机陀螺仪频谱图，振动能量主要集中于低频区域" loading="lazy" />
             <span class="spectrum-badge">QINGCANG PROTOTYPE</span>
           </div>
           <figcaption>
@@ -127,7 +127,7 @@
 
         <figure class="spectrum-card spectrum-carbon">
           <div class="spectrum-image">
-            <img src="assets/qingcang/24da1626fd9823b3fad3ad77cdd54224.jpg" alt="对比碳纤维 FPV 机架陀螺仪频谱图，存在更宽的振动能量分布与约 115 Hz 峰值" loading="lazy" />
+            <img src="assets/24da1626fd9823b3fad3ad77cdd54224.jpg" alt="对比碳纤维 FPV 机架陀螺仪频谱图，存在更宽的振动能量分布与约 115 Hz 峰值" loading="lazy" />
             <span class="spectrum-badge">CARBON-FIBER REFERENCE</span>
           </div>
           <figcaption>
@@ -151,7 +151,7 @@
 
     <section class="flight" id="flight">
       <div class="flight-screen">
-        <img src="assets/qingcang/fpv-flight.png" alt="FPV 夜间飞行第一视角" loading="lazy" />
+        <img src="assets/fpv-flight.png" alt="FPV 夜间飞行第一视角" loading="lazy" />
         <div class="flight-scan"></div>
         <div class="osd osd-left"><span>QINGCANG // PILOT 01</span><strong>ARMED</strong><small>MODE: ACRO</small></div>
         <div class="osd osd-right"><span>RSSI 98</span><strong>16.7V</strong><small>03:42 FLIGHT</small></div>
@@ -171,7 +171,7 @@
       <div class="config-shell reveal">
         <div class="config-preview" data-color="lime">
           <div class="preview-label"><span>LIVE BUILD / QC-03</span><b id="build-name">RACE SPEC</b></div>
-          <img id="config-image" src="assets/qingcang/prototype-hand.jpeg" alt="擎苍 FPV 原型机" />
+          <img id="config-image" src="assets/prototype-hand.jpeg" alt="擎苍 FPV 原型机" />
           <div class="config-crosshair"></div>
           <div class="color-swatches" aria-label="选择机身色彩">
             <button class="swatch active" style="--swatch:#e7ff42" data-color="lime" aria-label="电光绿"></button>
@@ -209,9 +209,9 @@
           <dl><div><dt>材料</dt><dd>Carbon Fiber Nylon / PA-CF</dd></div><div><dt>结构</dt><dd>Generative Lattice</dd></div><div><dt>生产</dt><dd>On-Demand Distributed Printing</dd></div></dl>
         </div>
         <div class="manufacturing-gallery reveal">
-          <figure class="print-main"><img src="assets/qingcang/printing-frame.jpeg" alt="3D 打印机正在制造无人机框架" loading="lazy" /><figcaption>FRAME / PRINT 02:46:18</figcaption></figure>
-          <figure><img src="assets/qingcang/printed-shell.jpeg" alt="3D 打印无人机外壳" loading="lazy" /><figcaption>STRUCTURE 01</figcaption></figure>
-          <figure><img src="assets/qingcang/printer-farm.jpeg" alt="3D 打印设备阵列" loading="lazy" /><figcaption>MICRO FACTORY</figcaption></figure>
+          <figure class="print-main"><img src="assets/printing-frame.jpeg" alt="3D 打印机正在制造无人机框架" loading="lazy" /><figcaption>FRAME / PRINT 02:46:18</figcaption></figure>
+          <figure><img src="assets/printed-shell.jpeg" alt="3D 打印无人机外壳" loading="lazy" /><figcaption>STRUCTURE 01</figcaption></figure>
+          <figure><img src="assets/printer-farm.jpeg" alt="3D 打印设备阵列" loading="lazy" /><figcaption>MICRO FACTORY</figcaption></figure>
         </div>
       </div>
     </section>
@@ -252,7 +252,7 @@
             <button id="stl-wireframe" type="button">切换线框 <span>⌗</span></button>
             <button id="stl-rotate" class="active" type="button">自动旋转 <span>●</span></button>
           </div>
-          <a class="stl-download" href="assets/qingcang/装配体2%20-%20五寸机%20机身-1.STL" download>下载原始 STL <span>↓</span></a>
+          <a class="stl-download" href="assets/装配体2%20-%20五寸机%20机身-1.STL" download>下载原始 STL <span>↓</span></a>
         </aside>
       </div>
     </section>
@@ -278,8 +278,8 @@
         <p>3 英寸 FPV 功能原型已完成并通过多次飞行与特技测试。下一阶段将集中完成快拆接口、材料验证和社区压力测试。</p>
       </div>
       <div class="prototype-proof reveal">
-        <figure><img src="assets/qingcang/prototype-detail.jpeg" alt="擎苍原型内部电控结构" loading="lazy" /><figcaption>FUNCTIONAL PROTOTYPE / CORE STACK</figcaption></figure>
-        <figure><img src="assets/qingcang/prototype-vertical.jpeg" alt="擎苍绿色 FPV 无人机原型" loading="lazy" /><figcaption>FLIGHT TEST UNIT / QC-P01</figcaption></figure>
+        <figure><img src="assets/prototype-detail.jpeg" alt="擎苍原型内部电控结构" loading="lazy" /><figcaption>FUNCTIONAL PROTOTYPE / CORE STACK</figcaption></figure>
+        <figure><img src="assets/prototype-vertical.jpeg" alt="擎苍绿色 FPV 无人机原型" loading="lazy" /><figcaption>FLIGHT TEST UNIT / QC-P01</figcaption></figure>
         <div class="prototype-status"><span>PROTOTYPE STATUS</span><strong>FLIGHT<br />PROVEN</strong><p><i></i>基础飞行测试完成</p><p><i></i>多项空中特技验证</p><p class="pending"><i></i>快拆模块工程化中</p></div>
       </div>
       <div class="roadmap reveal">
@@ -302,17 +302,17 @@
   </main>
 
   <footer class="qc-footer">
-    <div class="qc-brand"><span class="brand-logo footer-brand-logo"><img src="assets/qingcang/168459effa38eb2948cb0e5914bbaff5.jpg" alt="擎苍 QingC Logo" /></span><span>擎苍<small>QINGCANG / FPV SYSTEMS</small></span></div>
+    <div class="qc-brand"><span class="brand-logo footer-brand-logo"><img src="assets/168459effa38eb2948cb0e5914bbaff5.jpg" alt="擎苍 QingC Logo" /></span><span>擎苍<small>QINGCANG / FPV SYSTEMS</small></span></div>
     <p>Modular &amp; Swappable 3D-Printed FPV Platform</p><p>© <span id="year"></span> QINGCANG</p>
   </footer>
 
   <dialog class="flight-dialog" id="flight-dialog">
     <button class="dialog-close" type="button" aria-label="关闭">×</button>
-    <video id="flight-video" controls playsinline preload="metadata"><source src="assets/qingcang/flight-test.mp4" type="video/mp4" /></video>
+    <video id="flight-video" controls playsinline preload="metadata"><source src="assets/flight-test.mp4" type="video/mp4" /></video>
     <div><span>QC-P01 / FLIGHT TEST</span><strong>真实原型试飞记录</strong></div>
   </dialog>
-  <script src="qingcang.js"></script>
-  <script src="brand-switcher.js?v=20260625-2"></script>
-  <script type="module" src="qingcang-model.js"></script>
+  <script src="script.js"></script>
+  <script src="../shared/brand-switcher.js?v=20260625-5"></script>
+  <script type="module" src="model.js"></script>
 </body>
 </html>

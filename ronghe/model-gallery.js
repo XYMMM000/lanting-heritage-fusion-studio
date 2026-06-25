@@ -105,7 +105,7 @@ if (viewport && canvas) {
     counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(options.length).padStart(2, '0')}`;
 
     loader.load(
-      `assets/models/${option.dataset.model}`,
+      `assets-models/${option.dataset.model}`,
       model => {
         if (requestId !== currentRequest) return;
         if (activeModel) scene.remove(activeModel);

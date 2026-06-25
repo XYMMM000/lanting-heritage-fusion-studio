@@ -136,7 +136,7 @@ if (viewer && canvas) {
     progress.textContent = '正在读取 605 KB 网格数据';
 
     try {
-      const response = await fetch(encodeURI('assets/qingcang/装配体2 - 五寸机 机身-1.STL'));
+      const response = await fetch(encodeURI('assets/装配体2 - 五寸机 机身-1.STL'));
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const buffer = await response.arrayBuffer();
       progress.textContent = '正在解析三角网格';

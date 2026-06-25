@@ -1,13 +1,26 @@
 (() => {
+  const scriptUrl = document.currentScript?.src || location.href;
+  const siteRoot = new URL('../', scriptUrl);
+  const resolveSiteUrl = path => new URL(path, siteRoot).href;
   const brands = [
+    {
+      id: 'studio',
+      name: '岚亭融境',
+      en: 'LANTING HERITAGE FUSION STUDIO',
+      kicker: '品牌总览 / THE STUDIO',
+      description: '连接文化遗产、数字体验与未来制造的青年跨学科团队。',
+      href: 'studio/',
+      image: 'studio/assets/studio-field.webp',
+      accent: '#cba96a'
+    },
     {
       id: 'lanting',
       name: '岚亭',
       en: 'LANTING STUDIO',
       kicker: '文化原点 / HERITAGE ORIGIN',
       description: '让非遗走进当代生活，在人与物之间续写文化的温度。',
-      href: 'lanting.html',
-      image: 'assets/lanting/image1.jpeg',
+      href: 'lanting/',
+      image: 'studio/assets/lanting-cover.jpeg',
       accent: '#91b8d4'
     },
     {
@@ -16,8 +29,8 @@
       en: 'RONGHE DIGITAL HERITAGE',
       kicker: '数字空间 / IMMERSIVE REALM',
       description: '以 XR、AI 与数字重建，让文化遗产重新被进入、理解与创造。',
-      href: 'index.html',
-      image: 'assets/video/project-poster.jpg',
+      href: 'ronghe/',
+      image: 'studio/assets/ronghe-cover.jpg',
       accent: '#d6a95f'
     },
     {
@@ -26,18 +39,22 @@
       en: 'QINGCANG FPV SYSTEMS',
       kicker: '未来制造 / MODULAR FLIGHT',
       description: '模块化、可快速换装的 3D 打印 FPV 开放飞行平台。',
-      href: 'qingcang.html',
-      image: 'assets/qingcang/hero-drone.jpeg',
+      href: 'qingcang/',
+      image: 'studio/assets/qingcang-cover.jpeg',
       accent: '#dfff34'
     }
   ];
 
-  const path = location.pathname.split('/').pop() || 'index.html';
-  const current = brands.find(brand => brand.href === path) || brands[1];
+  const normalizePath = url => {
+    const pathname = new URL(url, location.href).pathname;
+    return pathname.endsWith('/index.html') ? pathname.slice(0, -10) : pathname.replace(/\/+$/, '/');
+  };
+  const currentPath = normalizePath(location.href);
+  const current = brands.find(brand => normalizePath(resolveSiteUrl(brand.href)) === currentPath) || brands[0];
   const cards = brands.map((brand, index) => `
     <a class="brand-network__card${brand.id === current.id ? ' is-current' : ''}"
-      href="${brand.href}" data-brand-id="${brand.id}" style="--accent:${brand.accent}">
-      <span class="brand-network__media" style="background-image:url('${brand.image}')"></span>
+      href="${resolveSiteUrl(brand.href)}" data-brand-id="${brand.id}" style="--accent:${brand.accent}">
+      <span class="brand-network__media" style="background-image:url('${resolveSiteUrl(brand.image)}')"></span>
       <span class="brand-network__veil"></span>
       <span class="brand-network__scan"></span>
       <span class="brand-network__index">0${index + 1} / 0${brands.length}</span>

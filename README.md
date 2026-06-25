@@ -17,13 +17,33 @@
 
 ```text
 lanting-heritage-fusion-studio/
-├── index.html
-├── style.css
-├── script.js
-├── model-gallery.js
-├── assets/
-│   ├── models/
-│   ├── video/
+├── index.html              # GitHub Pages 入口，自动进入总官网
+├── studio/                 # 岚亭融境总官网
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── assets/
+├── lanting/                # 岚亭项目官网
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── assets/
+├── ronghe/                 # 融合 XR 项目官网
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   ├── model-gallery.js
+│   ├── assets-models/
+│   └── assets-video/
+├── qingcang/               # 擎苍项目官网
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   ├── model.js
+│   └── assets/
+├── shared/                 # 跨官网共享组件与依赖
+│   ├── brand-switcher.css
+│   ├── brand-switcher.js
 │   └── vendor/
 └── README.md
 ```
@@ -45,7 +65,7 @@ python -m http.server 8000
 
 ### 修改团队成员
 
-打开 `index.html`，找到 `id="team"` 的部分。
+打开 `studio/index.html`，找到 `id="team"` 的部分。
 
 替换每个团队卡片中的内容：
 
@@ -72,7 +92,7 @@ python -m http.server 8000
 
 ### 修改联系方式
 
-在 `id="contact"` 的节中，替换 Email、GitHub 与 Portfolio 链接为实际地址。
+在对应官网 `index.html` 的 `id="contact"` 节中替换联系方式。
 
 ## GitHub Pages 部署
 
@@ -87,7 +107,7 @@ python -m http.server 8000
 
 ## 编辑建议
 
-- 所有主要文本内容都可在 `index.html` 中直接编辑。
-- 设计风格使用深色、红色高亮与现代卡片布局，可根据需要自定义颜色变量。
-- 如需添加真实图片，请创建 `assets/gallery/` 或 `assets/team/` 文件夹，并在 HTML 中替换占位内容。
+- 每个官网的内容、样式与脚本都在各自目录中维护。
+- 新项目建议沿用 `项目名/index.html + style.css + script.js + assets/` 结构。
+- 跨站品牌矩阵统一在 `shared/brand-switcher.js` 中配置。
 URL: https://xymmm000.github.io/lanting-heritage-fusion-studio/
