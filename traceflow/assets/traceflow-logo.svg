@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">TraceFlow logo</title>
+  <desc id="desc">A geometric asset tag and flowing tracking path mark for TraceFlow.</desc>
+  <defs>
+    <linearGradient id="mark" x1="96" y1="76" x2="420" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#21d7c5"/>
+      <stop offset=".48" stop-color="#d7ff3f"/>
+      <stop offset="1" stop-color="#78a7ff"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="108" y1="90" x2="410" y2="418" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#102226"/>
+      <stop offset="1" stop-color="#071012"/>
+    </linearGradient>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.129 0 0 0 0 0.843 0 0 0 0 0.773 0 0 0 .65 0" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M256 42 430 142v228L256 470 82 370V142L256 42Z" fill="#071012"/>
+  <path d="M256 42 430 142v228L256 470 82 370V142L256 42Z" fill="none" stroke="url(#mark)" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M256 92 386 167v178L256 420 126 345V167L256 92Z" fill="url(#dark)" stroke="rgba(236,244,240,.18)" stroke-width="8" stroke-linejoin="round"/>
+  <g filter="url(#glow)">
+    <path d="M150 186h212" fill="none" stroke="url(#mark)" stroke-width="30" stroke-linecap="round"/>
+    <path d="M256 186v142" fill="none" stroke="url(#mark)" stroke-width="30" stroke-linecap="round"/>
+    <path d="M188 322c42-80 101-118 176-114" fill="none" stroke="#21d7c5" stroke-width="24" stroke-linecap="round"/>
+    <path d="M188 322c42-80 101-118 176-114" fill="none" stroke="#d7ff3f" stroke-width="7" stroke-linecap="round" stroke-dasharray="18 24"/>
+  </g>
+  <g fill="#071012" stroke="#d7ff3f" stroke-width="12">
+    <circle cx="150" cy="186" r="23"/>
+    <circle cx="362" cy="186" r="23"/>
+    <circle cx="256" cy="328" r="23"/>
+  </g>
+  <g fill="#ecf4f0" font-family="IBM Plex Mono, Consolas, monospace" font-size="38" font-weight="700" letter-spacing="2">
+    <text x="186" y="255">TF</text>
+  </g>
+</svg>
