@@ -481,6 +481,15 @@ button { color: inherit; font: inherit; }
 .project-lanting .project-media span { background-image: url("assets/lanting-cover.jpeg"); }
 .project-ronghe .project-media span { background-image: url("assets/ronghe-cover.jpg"); }
 .project-qingcang .project-media span { background-image: url("assets/qingcang-cover.jpeg"); }
+.project-traceflow .project-media span {
+  background:
+    radial-gradient(circle at 68% 28%, rgba(33, 215, 197, .45), transparent 18%),
+    radial-gradient(circle at 36% 68%, rgba(221, 255, 56, .24), transparent 18%),
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(135deg, #122226, #05090a 72%);
+  background-size: auto, auto, 58px 58px, 58px 58px, auto;
+}
 .project-number { position: absolute; top: 40px; left: clamp(28px,4vw,62px); color: rgba(238,233,220,.7); }
 .project-copy p { margin: 0 0 15px; color: var(--gold); font: 500 9px/1 var(--mono); letter-spacing: .12em; }
 .project-copy h3 { margin: 0; font: 700 clamp(54px,7vw,106px)/.9 var(--serif); letter-spacing: -.07em; }
@@ -499,6 +508,8 @@ button { color: inherit; font: inherit; }
 .project-qingcang .project-enter { color: var(--acid); }
 .project-lanting .project-copy p,
 .project-lanting .project-enter { color: #b9dcf0; }
+.project-traceflow .project-copy p,
+.project-traceflow .project-enter { color: #21d7c5; }
 
 .project-future {
   background:

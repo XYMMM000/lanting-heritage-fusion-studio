@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="TraceFlow asset intelligence cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102226"/>
+      <stop offset=".55" stop-color="#071012"/>
+      <stop offset="1" stop-color="#05090a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".68" cy=".34" r=".42">
+      <stop offset="0" stop-color="#21d7c5" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#21d7c5" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#21d7c5" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="74" height="74" patternUnits="userSpaceOnUse">
+      <path d="M74 0H0v74" fill="none" stroke="#ecf4f0" stroke-opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <rect width="1600" height="1000" fill="url(#grid)" opacity=".7"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M188 706C418 520 596 790 810 558s418-42 608-258" stroke="#21d7c5" stroke-opacity=".42" stroke-width="4"/>
+    <path d="M216 358c172 114 314 60 460-42s286-82 488 72" stroke="#d7ff3f" stroke-opacity=".32" stroke-width="3"/>
+    <circle cx="408" cy="604" r="122" stroke="#21d7c5" stroke-opacity=".32" stroke-width="2"/>
+    <circle cx="970" cy="476" r="190" stroke="#d7ff3f" stroke-opacity=".18" stroke-width="2" stroke-dasharray="12 20"/>
+    <circle cx="1260" cy="308" r="92" stroke="#21d7c5" stroke-opacity=".3" stroke-width="2"/>
+  </g>
+  <g font-family="IBM Plex Mono, Consolas, monospace" font-weight="700">
+    <g transform="translate(295 548)">
+      <circle r="17" fill="#071012" stroke="#d7ff3f" stroke-width="6"/>
+      <text x="34" y="6" font-size="26" fill="#d7ff3f">LAB-A12</text>
+    </g>
+    <g transform="translate(762 594)">
+      <circle r="17" fill="#071012" stroke="#21d7c5" stroke-width="6"/>
+      <text x="34" y="6" font-size="26" fill="#21d7c5">WARE-03</text>
+    </g>
+    <g transform="translate(1135 360)">
+      <circle r="17" fill="#071012" stroke="#ff8b3d" stroke-width="6"/>
+      <text x="34" y="6" font-size="26" fill="#ff8b3d">ALERT</text>
+    </g>
+  </g>
+  <g transform="translate(176 156)" fill="#ecf4f0">
+    <text font-family="Barlow Condensed, Arial, sans-serif" font-size="124" font-weight="800" letter-spacing="3">TRACEFLOW</text>
+    <text y="78" font-family="IBM Plex Mono, Consolas, monospace" font-size="24" fill="#8da0a0" letter-spacing="5">FULL-CHAIN ASSET MANAGEMENT</text>
+  </g>
+</svg>

@@ -42,6 +42,16 @@
       href: 'qingcang/',
       image: 'studio/assets/qingcang-cover.jpeg',
       accent: '#dfff34'
+    },
+    {
+      id: 'traceflow',
+      name: 'TraceFlow',
+      en: 'FULL-CHAIN ASSET MANAGEMENT',
+      kicker: '资产智能 / ASSET INTELLIGENCE',
+      description: '融合柔性 NFC/RFID 标签、边缘网关与 SaaS 中台，重塑固定资产清算治理流程。',
+      href: 'traceflow/',
+      image: 'studio/assets/traceflow-cover.svg',
+      accent: '#21d7c5'
     }
   ];
 
@@ -65,7 +75,7 @@
         <span class="brand-network__description">${brand.description}</span>
         <span class="brand-network__enter">
           ${brand.id === current.id ? '返回当前官网' : '进入官方网站'}
-          <i aria-hidden="true">↗</i>
+          <i aria-hidden="true">→</i>
         </span>
       </span>
     </a>
@@ -85,7 +95,7 @@
       </div>
       <div class="brand-network__grid">${cards}</div>
       <div class="brand-network__footer">
-        <span>HERITAGE · DIGITAL EXPERIENCE · FUTURE MAKING</span>
+        <span>HERITAGE · DIGITAL EXPERIENCE · FUTURE MAKING · ASSET INTELLIGENCE</span>
         <span>选择一个坐标，进入它的世界</span>
       </div>
     </section>
